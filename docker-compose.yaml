@@ -1,0 +1,6 @@
+services:
+  python-app:
+    build: ./
+    container_name: ros-urdf
+    volumes:
+      - ./src:/ws/src
