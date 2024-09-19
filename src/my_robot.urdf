@@ -1,12 +1,48 @@
 <?xml version="1.0"?>
 <robot name="my_robot">
+
+    <!-- Define materials for the robot -->
+    <material name="grey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+
+    <material name="green">
+        <color rgba="0.0 1.0 0.0 1.0"/>
+    </material>
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <!-- Define the base link of the robot -->
     <link name="base_link">
         <visual>
             <geometry>
-                <box size="0.5 0.5 0.5"/>
+                <!-- Define the shape and size of the base link geometry -->
+                <box size="0.6 0.4 0.2"/>
             </geometry>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin xyz="0 0 0.1" rpy="0 0 0"/>
+            <material name="green"/> <!-- Apply the green material to the base link -->
         </visual>
-        
-    </link>    
+    </link>
+
+    <!-- Define the lidar link of the robot -->
+    <link name="lidar">
+        <visual>
+            <geometry>
+                <!-- Define the shape and size of the lidar geometry -->
+                <cylinder radius="0.1" length="0.2"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="white"/> <!-- Apply the white material to the lidar -->
+        </visual>
+    </link>
+
+    <!-- Define the joint connecting the base link and lidar -->
+    <joint name="base_lidar_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="lidar"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
 </robot>

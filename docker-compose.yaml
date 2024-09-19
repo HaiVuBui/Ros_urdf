@@ -1,6 +1,11 @@
 services:
-  python-app:
+  urdf:
     build: ./
     container_name: ros-urdf
+    environment:
+      - "XAUTHORITYS"
+      - "DISPLAY"
     volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw  
       - ./src:/ws/src
+    command: bash src/autorun.sh 

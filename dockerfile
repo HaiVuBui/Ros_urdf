@@ -20,4 +20,3 @@ COPY ./src ./src
 # Activate the Python 3.11 virtual environment and install any Python dependencies
 
 # Set the entry point to execute your Python script using Python 3.11
-CMD ["bash", "src/autorun.sh"]

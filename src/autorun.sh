@@ -1,3 +1,6 @@
 #!/bin/bash
 
-ros2 launch urdf_tutorial display.launch.py model :=/src/my_robot
+python3 src/test.py
+
+source /opt/ros/humble/setup.bash
+ros2 launch urdf_tutorial display.launch.py model:=/ws/src/my_robot.urdf
