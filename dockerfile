@@ -11,6 +11,9 @@ RUN apt update && apt install -y \
 
 # Create a virtual environment for Python 3.11 (Optional but recommended)
 
+RUN curl -sSL http://get.gazebosim.org | sh 
+
+
 # Install the required ROS package
 RUN apt update && apt install -y ros-humble-urdf-tutorial
 
